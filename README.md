@@ -19,6 +19,8 @@ sage tuttedraw.sage tutte <file> <informat> <outformat>
 
 Given a plain text file where each line encodes a planar graph, this computes a nice visualization for each graph. The script iteratively computes weighted Tutte embeddings and sets appropriate weights so that faces and edges become "nice". For more information see http://arxiv.org/abs/1708.06449.
 
+The outer face is chosen automatically by selecting the face whose choice maximizes the order of the automorphism group of the augmented graph — this tends to produce the most symmetric and visually appealing embedding.
+
 | Argument | Values | Description |
 |---|---|---|
 | `informat` | `list`, `s6`, `g6` | `list` = Python edge list, `s6` = sparse6, `g6` = graph6 |
@@ -42,6 +44,10 @@ graph# 1 : [(0, 17), (0, 18), ...]
 maxsym: 4
 wrote visualization to example_graph_edgelist.txt_1.tutte.png
 ```
+
+## Related
+
+- [ipe2graph](https://github.com/manfredscheucher/ipe2graph) — extract a graph from an Ipe drawing back into sparse6/edge list format
 
 ## Dependencies
 
